@@ -125,10 +125,14 @@
 
 
                     // </tr>";
-                    if ($value2["id"] == "PR003") {
+                    if ($value2["id"] == "PR003")  {
+
                         unset($value2);
                        
-                    } 
+                       
+                    }if($value2["id"]=="PR002"){
+                        $value2["name"]='BIG-555';
+                    }
                     echo "<tr>
                     <td>$key</td>
                     <td>$key1</td>
@@ -139,6 +143,8 @@
 
 
                     </tr>";
+
+
                    
                 };
                
