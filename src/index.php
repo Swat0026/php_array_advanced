@@ -115,6 +115,20 @@
 
                 foreach ($value1 as $key2 => $value2) {
 
+                    // echo "<tr>
+                    // <td>$key</td>
+                    // <td>$key1</td>
+                    // <td>$value2[id]</td>
+                    // <td>$value2[name]</td>
+                    // <td>$value2[brand]</td>
+
+
+
+                    // </tr>";
+                    if ($value2["id"] == "PR003") {
+                        unset($value2);
+                       
+                    } 
                     echo "<tr>
                     <td>$key</td>
                     <td>$key1</td>
@@ -125,26 +139,46 @@
 
 
                     </tr>";
+                   
                 };
+               
             };
         };
 
         echo "</table>";
-
+        echo "<table border='3px'>
+        <tr>
+        <th>Category</th>
+        <th>Sub Category</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Brand</th>
+        </tr>";
         foreach ($products as $key => $value) {
             foreach ($value as $key1 => $value1) {
-                foreach ($value1 as $key2 => $value2) {
-                    if ($value2["id"] == "PR003") {
-                        unset($value2);
-                    } else if ($value2["id"] == "PR002") {
-                        $value2["name"] == "BIG-555";
+                foreach ($value1 as $key2 => $value2){
+                    if($value2["brand"]=="Samsung"){
+                        echo "<tr><td>$key</td><td>$key1</td><td>$value2[id]</td><td>$value2[name]</td><td>$value2[brand]</td></tr>";
                     }
 
-
-                    echo "<p> Product ID - $value2[id] <br> Product Name - $value2[name] <br>  Product Brand - $value2[brand] <br>Sub Category - $key1 <br> Category - $key </p>";
                 }
+                # code...
             }
-        };
+            # code...
+        }
+        echo "</table>";
+
+
+
+
+
+
+
+
+
+
+
+
 
         echo "<table border='3px'>
         <tr>
@@ -164,8 +198,11 @@
                 }
                 
             }
-        }
+        };
 
+       
+
+       
 
         ?>
 
